@@ -1,16 +1,16 @@
-export const Character = ({id, name, img}) => {
+export const Character = ({ id, name, img }) => {
   return (
     <div className="tarjetas">
       <p>Nombre: {name} </p>
       <p>Id: {id}</p>
       <img src={img} alt={Character.name} />
       <div>
-        <button> + </button>
+        <button type="button" class="btn btn-primary"> - </button>
         <span> 1 </span>
-        <button> - </button>
-        
+        <button type="button" class="btn btn-primary"> + </button>
+
       </div>
-      <button> Detalle </button>
+      <button type="button" class="btn btn-primary">Detalle</button>
     </div>
   )
 }

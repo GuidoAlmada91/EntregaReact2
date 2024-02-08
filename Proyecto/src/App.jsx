@@ -4,7 +4,7 @@ import { CharacterListContainer } from "./components/characterListContainer/char
 export const App = () => {
   return(
     <>
-    <h1>App Pokemón</h1>
+    
     <CharacterListContainer />
     
   
