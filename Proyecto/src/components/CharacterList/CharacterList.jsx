@@ -1,10 +1,13 @@
+import { Character } from "../Character/Character"
 
 
-export const CharacterList = () => {
+export const CharacterList = ({characters}) => {
   return (
-    <div>
-      
-    </div>
+    <>
+      {characters.map((character) => (
+      <Character key={character.id} id={character.id} name={character.name} img={character.img}/>
+      ))}
+    </>
   )
 }
 
