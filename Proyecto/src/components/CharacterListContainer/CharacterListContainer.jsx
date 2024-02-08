@@ -7,7 +7,7 @@ export const CharacterListContainer = () => {
   const [characters, setcharacters] = useState([])
   
   const getCharacters = async () =>{
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=60");
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=150");
     const lista = await response.json();
     const {results} = lista
         

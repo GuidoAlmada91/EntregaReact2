@@ -6,7 +6,7 @@ export const Character = ({ id, name, img }) => {
       <img src={img} alt={Character.name} />
       <div>
         <button type="button" class="btn btn-primary"> - </button>
-        <span> 1 </span>
+        <span> 0 </span>
         <button type="button" class="btn btn-primary"> + </button>
 
       </div>
