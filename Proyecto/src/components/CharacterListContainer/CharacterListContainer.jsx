@@ -7,7 +7,7 @@ export const CharacterListContainer = () => {
   const [characters, setcharacters] = useState([])
   
   const getCharacters = async () =>{
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=150");
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=100");
     const lista = await response.json();
     const {results} = lista
         
@@ -18,7 +18,9 @@ export const CharacterListContainer = () => {
       return{
         id: poke.id,
         name: poke.name,
-        img: poke.sprites.other.dream_world.front_default
+        img: poke.sprites.other.dream_world.front_default,
+        tipo: poke.types[0].type.name
+        
       }
     })
       setcharacters(await Promise.all(newcharacter))

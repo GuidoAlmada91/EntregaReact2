@@ -39,17 +39,36 @@ h1{
   text-align: center;
   margin-top: 30px;
   margin: 15px;
-  width: 400px;
+  width: 300px;
   border: 2px solid  rgb(222, 245, 123);
   border-radius: 15px;
+  overflow: hidden;
+}
+
+.tarjetas:hover{
+  background-color: rgba(206, 230, 143, 0.575);
+  
+  
 }
 
 img{
   width: 226px;
   height: 218px;
+  
 }
 
-p{
+
+	        
+.nombre{
+  background-color: rgb(222, 245, 123);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(61, 61, 61);
+}
+
+.id{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: italic;
   font-weight: bold;
@@ -79,6 +98,12 @@ nav{
   
 }
 
+.abilities{
+  background-color: rgb(44, 44, 44);
+  color: rgb(222, 245, 123);
+}
+
+
 span{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: italic;
@@ -86,4 +111,41 @@ span{
   font-size: 15px;
   color: rgb(255, 255, 255);
   margin: 10px;
+}
+
+.tipo{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background-color: rgb(77, 77, 77);
+}
+
+.agua{
+  background-color: rgba(148, 247, 247, 0.555);
+}
+.planta{
+  background-color: rgba(163, 245, 194, 0.589);
+}
+.bicho{
+  background-color: rgba(114, 113, 113, 0.514);
+  color: rgba(240, 248, 255, 0.849);
+}
+
+.fuego{
+  background-color: rgba(245, 173, 173, 0.603);
+}
+.normal{
+  background-color: rgba(196, 196, 196, 0.548);
+}
+.veneno{
+  background-color: rgba(102, 77, 112, 0.486);
+  color: aliceblue;
+}
+.electrico{
+  background-color: rgba(210, 226, 119, 0.534);
+}
+.tierra{
+  background-color: rgba(184, 125, 125, 0.541);
+}
+.hada{
+  background-color: rgba(250, 181, 241, 0.521);
 }
