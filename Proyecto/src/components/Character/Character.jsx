@@ -1,6 +1,6 @@
 import { useCount } from "../../hooks/useCount";
 
-export const Character = ({ id, name, img, tipo }) => {
+export const Character = ({ id, name, img, tipo, precio }) => {
   const getTypeClass = (tipo) => {
     switch (tipo) {
       case 'water':
@@ -26,15 +26,18 @@ export const Character = ({ id, name, img, tipo }) => {
     }
   };
 
-  const {count, increment, decrement, reset} = useCount();
+  const { count, increment, decrement, reset } = useCount();
   const tipoClass = getTypeClass(tipo);
   return (
     <div className={`tarjetas ${tipoClass}`}>
       <p className="nombre">Nombre: {name} </p>
       <p className="id"># {id}</p>
-    
+
       <p className={`tipo ${tipoClass}`}>Tipo: {tipo}</p>
       <img src={img} alt={Character.name} />
+      <div className="contenedorPrecio">
+        <p className="precio"> $ {precio}</p>
+      </div>
       <div>
         <button type="button" className="btn btn-primary" onClick={decrement}> - </button>
         <span> {count} </span>

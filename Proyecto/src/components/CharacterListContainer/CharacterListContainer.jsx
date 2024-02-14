@@ -5,6 +5,10 @@ import {CharacterList} from "../CharacterList/CharacterList"
 export const CharacterListContainer = () => {
 
   const [characters, setcharacters] = useState([])
+
+  const generarPrecioRandom = () => {
+    return Math.floor(Math.random() * 30) + 1;
+  };
   
   const getCharacters = async () =>{
     const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=100");
@@ -19,7 +23,8 @@ export const CharacterListContainer = () => {
         id: poke.id,
         name: poke.name,
         img: poke.sprites.other.dream_world.front_default,
-        tipo: poke.types[0].type.name
+        tipo: poke.types[0].type.name,
+        precio: generarPrecioRandom()
         
       }
     })

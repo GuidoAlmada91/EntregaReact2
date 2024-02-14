@@ -119,6 +119,26 @@ span{
   background-color: rgb(77, 77, 77);
 }
 
+.precio{
+  margin-top: 20px;
+  color: rgb(178, 235, 140);
+  font-weight: bold;
+  background-color: rgb(11, 15, 0);
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid;
+  
+}
+
+.contenedorPrecio{
+  display: flex;
+  justify-content: center;
+  border-color: rgb(222, 245, 123);
+  border-width: 2px;
+  
+
+}
+
 .agua{
   background-color: rgba(148, 247, 247, 0.555);
 }
