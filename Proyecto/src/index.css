@@ -78,7 +78,7 @@ img{
 
 nav{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   height: 100px;
   align-items: center;
   text-align: center;
@@ -88,6 +88,11 @@ nav{
   font-weight: bold;
   color: rgb(255, 255, 255);
   background-color: rgb(44, 44, 44);
+}
+
+.carrito{
+  height: 50px;
+  width: 50px;
 }
 
 .subtitulo{
@@ -119,16 +124,21 @@ span{
   background-color: rgb(77, 77, 77);
 }
 
-.precio{
+.precio {
   margin-top: 20px;
-  color: rgb(178, 235, 140);
+  color: #fff;
   font-weight: bold;
-  background-color: rgb(11, 15, 0);
-  padding: 10px;
+  background-color: #7BDEF5;
+  padding: 15px 20px;
   border-radius: 25px;
-  border: 2px solid;
-  
+  border: 2px solid #7BDEF5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
 }
+  
+
 
 .contenedorPrecio{
   display: flex;
