@@ -44,7 +44,7 @@ export const Character = ({ id, name, img, tipo, precio }) => {
         <button type="button" className="btn btn-primary" onClick={increment}> + </button>
 
       </div>
-      <button type="button" className="btn btn-primary">Agregar al carrito</button>
+      <button type="button" className="btn btn-primary">AGREGAR AL CARRITO</button>
     </div>
   )
 }

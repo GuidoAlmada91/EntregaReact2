@@ -13,19 +13,21 @@ button.btn{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: italic;
   font-weight: bold;
-  color: rgb(222, 245, 123);
+  font-size: 13px;
+  color: rgb(246, 246, 245);
   margin-top: 10px;
-  background-color: rgb(11, 15, 0);
-  border-color: rgb(222, 245, 123);
-  border-width: 2px;
+  padding: 10px 18px;
+  background-color: rgb(39, 39, 39);
   border-radius: 10px;
+  border-color: rgb(255, 255, 255);
   margin-bottom: 15px;
+  
 }
 
 button.btn:hover{
-  background-color: rgb(222, 245, 123);
-  border-color: rgb(61, 61, 61);
+  background-color: rgb(247, 247, 247);
   color: rgb(61, 61, 61);
+  border-color: rgb(255, 255, 255);
 }
 
 h1{
@@ -79,7 +81,7 @@ img{
 nav{
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 70px;
   align-items: center;
   text-align: center;
   font-size: 40px;
@@ -90,18 +92,30 @@ nav{
   background-color: rgb(44, 44, 44);
 }
 
-.carrito{
-  height: 50px;
-  width: 50px;
+.titulo{
+  margin-left: 10%;
 }
 
 .subtitulo{
+  font-weight: bold;
+  font-style: italic;
   text-align: center;
   background-color: rgb(222, 245, 123);
   color: black;
   font-size: 15px;
-  
 }
+
+  
+img.carrito{
+  margin-right: 10%;
+}
+
+.carrito{
+  height: 40px;
+  width: 40px;
+  margin-left: auto;
+}
+
 
 .abilities{
   background-color: rgb(44, 44, 44);
@@ -125,13 +139,14 @@ span{
 }
 
 .precio {
-  margin-top: 20px;
-  color: #fff;
+  font-family: "Calibri";
+  margin-top: 15px;
+  color: #ffffff;
   font-weight: bold;
-  background-color: #7BDEF5;
+  background-color: #289b39;
   padding: 15px 20px;
   border-radius: 25px;
-  border: 2px solid #7BDEF5;
+  border: 2px solid #ffffffec;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: inline-block;
   text-align: center;
@@ -179,3 +194,4 @@ span{
 .hada{
   background-color: rgba(250, 181, 241, 0.521);
 }
+
