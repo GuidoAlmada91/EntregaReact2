@@ -37,7 +37,6 @@ h1{
 .tarjetas{
   background-color: rgb(53, 53, 53);
   text-align: center;
-  margin-top: 30px;
   margin: 15px;
   width: 300px;
   border: 2px solid  rgb(222, 245, 123);
@@ -76,9 +75,9 @@ img{
   color: rgb(255, 255, 255);
 }
 
-nav{
-  display: flex;
-  justify-content: space-between;
+.NavBar{
+  width: 100%;
+  text-align: center;
   height: 100px;
   align-items: center;
   text-align: center;
@@ -96,6 +95,7 @@ nav{
 }
 
 .subtitulo{
+  margin-top: 10px;
   text-align: center;
   background-color: rgb(222, 245, 123);
   color: black;
@@ -178,4 +178,72 @@ span{
 }
 .hada{
   background-color: rgba(250, 181, 241, 0.521);
+}
+
+.tarjeta{
+  background-color: rgb(53, 53, 53);
+  text-align: center;
+  margin-top: 15px;
+  width: 300px;
+  border: 2px solid  rgb(222, 245, 123);
+  border-radius: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  flex-direction: column;
+}
+
+.datosTarjeta{
+  margin-top: 10%;
+  text-align: left;
+  margin-left: 25%;
+  margin-bottom: 10%;
+}
+
+.imagenTarjeta{
+  margin-top: 10%;
+}
+
+.contenedorTarjetas{
+  margin-top: 10px;
+}
+
+.botonMenu{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  padding-left: 2%;
+  padding-right: 2%;
+  color: rgb(222, 245, 123);
+  margin-top: 10px;
+  background-color: rgb(11, 15, 0);
+  border-color: rgb(222, 245, 123);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  
+}
+
+.botonMenu:hover{
+  background-color: rgb(222, 245, 123);
+  border-color: rgb(61, 61, 61);
+  color: rgb(61, 61, 61);
+}
+
+nav{  
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgb(44, 44, 44);
 }

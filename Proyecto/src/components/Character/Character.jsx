@@ -1,6 +1,7 @@
 import { useCount } from "../../hooks/useCount";
+import { Link } from "react-router-dom";
 
-export const Character = ({ id, name, img, tipo, precio }) => {
+export const Character = ({ id, name, img, tipo }) => {
   const getTypeClass = (tipo) => {
     switch (tipo) {
       case 'water':
@@ -29,22 +30,23 @@ export const Character = ({ id, name, img, tipo, precio }) => {
   const { count, increment, decrement, reset } = useCount();
   const tipoClass = getTypeClass(tipo);
   return (
-    <div className={`tarjetas ${tipoClass}`}>
-      <p className="nombre">Nombre: {name} </p>
-      <p className="id"># {id}</p>
+    <div className="contenedorTarjetas">
+      <div className={`tarjetas ${tipoClass}`}>
+        <p className="nombre">Nombre: {name} </p>
+        <p className="id"># {id}</p>
 
-      <p className={`tipo ${tipoClass}`}>Tipo: {tipo}</p>
-      <img src={img} alt={Character.name} />
-      <div className="contenedorPrecio">
-        <p className="precio"> $ {precio}</p>
-      </div>
-      <div>
-        <button type="button" className="btn btn-primary" onClick={decrement}> - </button>
-        <span> {count} </span>
-        <button type="button" className="btn btn-primary" onClick={increment}> + </button>
+        <p className={`tipo ${tipoClass}`}>Tipo: {tipo}</p>
+        <img src={img} alt={Character.name} />
+        <div>
+          <button type="button" className="btn btn-primary" onClick={decrement}> - </button>
+          <span> {count} </span>
+          <button type="button" className="btn btn-primary" onClick={increment}> + </button>
 
+        </div>
+        <Link to={`/character/${id}`}>
+          <button type="button" className="btn btn-primary">Detalle</button>
+        </Link>
       </div>
-      <button type="button" className="btn btn-primary">Agregar al carrito</button>
     </div>
   )
 }
