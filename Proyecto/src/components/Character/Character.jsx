@@ -47,9 +47,6 @@ export const Character = ({ id, name, img, tipo }) => {
           <button type="button" className="btn btn-primary">Detalle</button>
         </Link>
       </div>
- HEAD
-
-      <button type="button" className="btn btn-primary">AGREGAR AL CARRITO</button>
 
     </div>
   )
