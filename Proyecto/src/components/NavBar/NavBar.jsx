@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 export const NavBar = () => {
@@ -5,11 +6,12 @@ export const NavBar = () => {
         <nav className="NavBar">
             <Link to="/">
                 <button className="botonMenu">Home</button>
-            </Link>
+            </Link>            
+
             <Link to="/Cart">
                 <button className="botonMenu">Carrito</button>
             </Link>
-        
+
         </nav>
     )
 }

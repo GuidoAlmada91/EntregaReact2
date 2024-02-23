@@ -14,7 +14,6 @@ export const App = () => {
         <NavBar/>
         <Routes>
           <Route path="/" element={<CharacterListContainer />} />
-          <Route path="/characters" element={<CharacterListContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/character/:id" element={<CharacterDetailContainer/>} />
         

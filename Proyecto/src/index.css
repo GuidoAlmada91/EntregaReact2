@@ -241,13 +241,14 @@ span{
 .botonMenu{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
+  font-style: italic;
   font-size: 30px;
   padding-left: 20%;
   padding-right: 20%;
-  color: rgb(222, 245, 123);
+  color: rgb(255, 255, 255);
   margin-top: 10px;
   background-color: rgb(11, 15, 0);
-  border-color: rgb(222, 245, 123);
+  border-color: rgb(255, 255, 255);
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
@@ -256,7 +257,7 @@ span{
 }
 
 .botonMenu:hover{
-  background-color: rgb(222, 245, 123);
+  background-color: rgb(238, 238, 238);
   border-color: rgb(61, 61, 61);
   color: rgb(61, 61, 61);
 }
@@ -274,4 +275,95 @@ nav.NavBar{
   background-color: rgb(44, 44, 44);
   margin-left: 30%;
   margin-right: 30%;
+}
+
+
+.tipoButton{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-right: 15px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(11, 15, 0);
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  
+}
+
+.tipoButton:hover{
+  background-color: rgb(221, 221, 221);
+  border-color: rgb(61, 61, 61);
+  color: rgb(59, 59, 59);
+}
+
+.water{
+  background-color: rgb(73, 180, 230);
+}
+.normal{
+  background-color: rgb(97, 97, 97);
+}
+.fighting{
+  background-color: rgb(192, 154, 70);
+}
+.flying{
+  background-color: rgb(172, 172, 172);
+}
+.poison{
+  background-color: rgb(133, 73, 230);
+}
+.ground{
+  background-color: rgb(144, 151, 82);
+}
+.rock{
+  background-color: rgb(122, 88, 37);
+}
+.bug{
+  background-color: rgb(24, 109, 73);
+}
+.ghost{
+  background-color: rgb(34, 3, 70);
+}
+.steel{
+  background-color: rgb(99, 98, 98);
+}
+.fire{
+  background-color: rgb(230, 73, 73);
+}
+.grass{
+  background-color: rgb(19, 145, 29);
+}
+.electric{
+  background-color: rgb(150, 182, 7);
+}
+.psychic{
+  background-color: rgb(60, 90, 4);
+}
+.ice{
+  background-color: rgb(174, 221, 243);
+}
+.dragon{
+  background-color: rgb(65, 66, 66);
+}
+.dark{
+  background-color: rgb(0, 0, 0);
+}
+.fairy{
+  background-color: rgb(235, 136, 235);
+}
+.unknown{
+  background-color: rgb(199, 199, 199);
+}
+.shadow{
+  background-color: rgb(43, 44, 44);
+}
+
+
+div.contendorTipos{
+  width: 100%;
+  text-align: center;
 }
