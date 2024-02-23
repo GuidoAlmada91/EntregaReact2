@@ -7,7 +7,6 @@ export const NavBar = () => {
             <Link to="/">
                 <button className="botonMenu">Home</button>
             </Link>            
-
             <Link to="/Cart">
                 <button className="botonMenu">Carrito</button>
             </Link>
