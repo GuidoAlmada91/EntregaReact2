@@ -64,7 +64,11 @@ export const CharacterListContainer = () => {
           <button key={tipo} className={`tipoButton ${tipo}`}  onClick={() => handleTypeButtonClick(tipo)}>
             {tipo}
           </button>
+          
         ))}
+         <button className="tipoButton" onClick={() => handleTypeButtonClick("")}>
+        All Types
+      </button>
 
       </div>
       <CharacterList characters={characters} />
