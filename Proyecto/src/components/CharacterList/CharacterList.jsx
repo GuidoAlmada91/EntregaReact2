@@ -4,8 +4,8 @@ import { Character } from "../Character/Character"
 export const CharacterList = ({characters}) => {
   return (
     <>
-      {characters.map((character) => (
-      <Character key={character.id} id={character.id} name={character.name} img={character.img} tipo={character.tipo} habilidad1={character.ability1}/>
+      {characters.map((characters) => (
+      <Character key={characters.id} id={characters.id} name={characters.name} img={characters.img} type={characters.type} habilidad1={characters.ability1}/>
       ))}
     </>
   )

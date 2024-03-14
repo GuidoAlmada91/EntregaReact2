@@ -1,77 +1,51 @@
 import React, { useEffect, useState } from "react";
 import { CharacterList } from "../CharacterList/CharacterList";
-
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../config/firebaseConfig";
+import { useParams } from "react-router-dom";
+import { seedProducts } from "../../utils/seedProducts";
 
 export const CharacterListContainer = () => {
-  const [characters, setCharacters] = useState([]);
-  const [types, setTypes] = useState([]);
-  const [selectedType, setSelectedType] = useState("");
-  
+  const {type} = useParams ();
+  const [pokecoleccion, setPokemon] = useState([]);
+  const [isLoading, setIsloading] = useState(true);
 
-  const getTipos = async () => {
-    try {
-      const traerTipos = await fetch('https://pokeapi.co/api/v2/type/');
-      const tiposPokemon = await traerTipos.json();
-      const tipos = tiposPokemon.results.map((tipo) => tipo.name);
-      setTypes(tipos);
-    } catch (error) {
-      console.error("Error al obtener tipos de Pokémon:", error);
-    }
-  };
+  const getCharacters = ( type ) => {
+    const myCharacters = type ? query( collection(db,"pokecoleccion"), where( "type", "==", type)) : collection(db,"pokecoleccion")
 
-  const getCharacters = async () => {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=50");
-    const lista = await response.json();
-    const { results } = lista;
+    getDocs(myCharacters)
+      .then(response => {
+        //const item = {
+          //id: response.docs[0].id,
+          //... response.docs[0].data()
+        const pokeList = response.docs.map(doc => {
+          const item = {
+            id: doc.id,
+            ...doc.data()
 
-    const newCharacters = await Promise.all(
-      results.map(async (character) => {
-        const response = await fetch(character.url);
-        const poke = await response.json();
+          }
+          return item;
 
-        // Filtrar por tipo si hay un tipo seleccionado
-        if (!selectedType || poke.types.some((t) => t.type.name === selectedType)) {
-          return {
-            id: poke.id,
-            name: poke.name,
-            img: poke.sprites.other.dream_world.front_default,
-            tipo: poke.types[0].type.name,
-            ability1: poke.abilities[0]?.ability.name,
-            ability2: poke.abilities[1]?.ability.name,
-          };
-        } else {
-          return null; // No agregar a la lista si no cumple con el tipo seleccionado
-        }
-      })
-    );
-
-    setCharacters(newCharacters.filter(Boolean)); // Filtrar elementos nulos (los que no cumplen con el tipo seleccionado)
+          })  
+        
+        setPokemon(pokeList)
+        setIsloading(false);
+    })
   };
 
   useEffect(() => {
-    getTipos();
-    getCharacters();
-  }, [selectedType]);
-
-  const handleTypeButtonClick = (tipo) => {
-    setSelectedType(tipo);
-  };
+    setIsloading(true)
+    
+    getCharacters(type);
+  }, [type]);
 
   return (
     <>
-      <div className="contendorTipos">
-        {types.map((tipo) => (
-          <button key={tipo} className={`tipoButton ${tipo}`}  onClick={() => handleTypeButtonClick(tipo)}>
-            {tipo}
-          </button>
-          
-        ))}
-         <button className="tipoButton" onClick={() => handleTypeButtonClick("")}>
-        All Types
-      </button>
-
-      </div>
-      <CharacterList characters={characters} />
+      {isLoading ? (
+        <p>Cargando...</p>
+      ) : (
+        <CharacterList characters={pokecoleccion} />
+      )}
     </>
   );
 };

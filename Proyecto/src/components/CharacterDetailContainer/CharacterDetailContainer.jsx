@@ -1,40 +1,42 @@
 import { useEffect, useState } from "react";
-import { CharacterDetail } from "../CharacterDetail/CharacterDetail";
 import { useParams } from "react-router-dom";
+import { CharacterDetail } from "../CharacterDetail/CharacterDetail";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../config/firebaseConfig";
+import { Character } from "../Character/Character";
+
 
 export const CharacterDetailContainer = () => {
-    const[character, setCharacter] = useState(null)
-    const[isLoading, setIsLoading] = useState(true)
 
-    const {id} = useParams();
+  const { id } = useParams();
+  const [Character, setCharacter] = useState(null);
 
-    const getCharacter = async (id) => {
-        const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-        const data = await resp.json();
-        setCharacter(data)
-        setIsLoading(false)
+  const getCharacters = (id) => { 
+    // Referencia a nuestro producto
+    const characterRef = doc( db, "pokecoleccion", id );
 
-    }
+    getDoc(characterRef)
+      .then( response => {
+          const pokemon = {
+            id: response.id,
+            ...response.data()
+          }
 
-    useEffect(() => {
-        getCharacter(id);
+          setCharacter(pokemon);
+      } )
 
-    })
+   }
 
-    return (
-        <>
-        {isLoading ? <h2>Cargando...</h2> :
-        <CharacterDetail
-        id={character.id}
-        name={character.name}
-        img={character.sprites.other.dream_world.front_default}
-        tipo={character.types[0].type.name}
-        ability1={character.abilities[0].ability.name}
-        ability2={character.abilities[1]?.ability.name}
+  useEffect(() => { 
 
-        
-    />}
+   getCharacters(id);
+
+   }, [])
+
+  return (
+    <>
+    {/* Falta poner el isLoading */}
+    {Character && <CharacterDetail {...Character} />}
     </>
-    )
+  )
 }
-
